@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Jobs" table="jobs">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateajout" type="datetime" column="dateAjout" nullable="false"/>
+    <field name="customerid" type="integer" column="customerId" nullable="false"/>
+    <field name="workerid" type="integer" column="workerId" nullable="false"/>
+    <field name="jobdesc" type="string" column="jobDesc" length="255" nullable="false"/>
+    <field name="jobdesc2" type="string" column="jobDesc2" length="100" nullable="false"/>
+    <field name="jobtype" type="string" column="jobType" length="20" nullable="false"/>
+    <field name="jobsubtype" type="string" column="jobSubType" length="20" nullable="false"/>
+    <field name="timingchantier" type="string" column="timingChantier" length="20" nullable="false"/>
+    <field name="esttime" type="integer" column="estTime" nullable="false"/>
+    <field name="status" type="string" column="status" length="20" nullable="false"/>
+    <field name="paid" type="string" column="paid" length="20" nullable="false"/>
+    <field name="action" type="string" column="action" length="20" nullable="false"/>
+    <field name="price" type="string" column="price" length="20" nullable="false"/>
+    <field name="addpayment" type="string" column="addPayment" length="20" nullable="false"/>
+    <field name="vatincluded" type="string" column="vatIncluded" length="20" nullable="false"/>
+    <field name="totheworker" type="string" column="toTheWorker" length="20" nullable="false"/>
+    <field name="paidtoworker" type="string" column="paidToWorker" length="20" nullable="false"/>
+    <field name="meeting" type="datetime" column="meeting" nullable="false"/>
+    <field name="thanksto" type="string" column="thanksTo" length="100" nullable="false"/>
+    <field name="smssent" type="integer" column="smsSent" nullable="false"/>
+    <field name="vialaurent" type="integer" column="viaLaurent" nullable="false"/>
+    <field name="smsBatchId" type="integer" column="sms_batch_id" nullable="false"/>
+    <field name="smsSendStatus" type="integer" column="sms_send_status" nullable="false"/>
+    <field name="smsStatus" type="integer" column="sms_status" nullable="false"/>
+    <field name="modifiedaftersms" type="integer" column="modifiedAfterSms" nullable="false"/>
+    <field name="idstat" type="integer" column="idStat" nullable="false"/>
+  </entity>
+</doctrine-mapping>

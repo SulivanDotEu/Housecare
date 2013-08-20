@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Keywords" table="keywords">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="keyword" type="string" column="keyword" length="150" nullable="false"/>
+    <field name="justlike" type="integer" column="justLike" nullable="false"/>
+    <field name="iterations" type="integer" column="iterations" nullable="false"/>
+    <field name="nbrmots" type="integer" column="nbrMots" nullable="false"/>
+    <field name="nbrchars" type="integer" column="nbrChars" nullable="false"/>
+    <field name="suitesscanees" type="integer" column="suitesScanees" nullable="false"/>
+    <field name="lang" type="string" column="lang" length="5" nullable="false"/>
+  </entity>
+</doctrine-mapping>

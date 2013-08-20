@@ -1,0 +1,30 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "HousecareCalendarBundle::layout.html.twig" %}
+
+{% block title %}
+Delete an element - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+<h2>Delete an element</h2>
+
+<p>
+   Etes-vous certain de vouloir supprimer l'element numero  "{{ element.id }}" ?
+</p>
+
+  {# On met l'id de l'article dans la route de l'action du formulaire #}
+<form action="{{ path('housecare_calendar_delete', {'id': element.id}) }}" method="post">
+   <a href="{{ path('housecare_calendar_read', {'id': element.id}) }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à l'article
+   </a>
+   <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {{ form_rest(form) }}
+</form>
+
+
+
+
+{% endblock %}

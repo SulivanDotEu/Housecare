@@ -1,0 +1,20 @@
+{# empty Twig template #}
+{% set current_page = 'create' %}
+{% extends "HousecareJobBundle:job:layout.html.twig" %}
+
+
+
+
+{% block container %}
+
+
+<div class="page-header">
+    <h1>Create a new Job</h1>
+</div>
+<form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+        <input type="submit" class="btn btn-primary" />
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,147 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "HousecareCalendarBundle::layout.html.twig" %}
+
+{% block title %}
+Creation d'un calendar element - {{ parent() }}
+{% endblock %}
+
+
+{% block header_container %}
+
+{% endblock %}
+
+
+{% block container %}
+
+<!--
+<div class="container">
+   <div class="row">
+-->
+
+
+
+
+<div style="position:relative;">
+   
+   <div class="element" style="top:50px; left:400px; height: 18px; width: 150px; background-color: cyan">
+   test
+</div>
+<div class="element" style="top:150px; left:550px; height: 18px; width: 150px; background-color: cyan">
+   test
+</div>
+
+
+   <table class="table-striped" id="calendar">
+
+      <tbody>
+
+
+         <tr> 
+            <td class="hour">Hours</td>
+            <td class="minute">Minutes</td>
+            <td>Owner 1</td>
+            <td>Owner 2</td>
+            <td>Owner 3</td>
+            <td>Owner 4</td>
+         </tr>
+         <tr> 
+            <td rowspan="3" class="hour">7h</td>
+            <td class="minute">00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td class="minute">20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td class="minute">40</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td rowspan="3" class="hour">8h</td>
+            <td class="minute">00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td class="minute">20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td class="minute">40</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td rowspan="3" class="hour">9h</td>
+            <td class="minute">00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td class="minute">20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr> 
+            <td class="minute">40</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+        
+
+
+
+      </tbody>
+   </table>
+</div>
+
+
+
+
+<div style="position:relative; width:320px; height:180px;"> 
+   <div style="z-index:10; border:solid 1px black; position:absolute; 
+        top:20px; left:20px; width:200px; height:80px;"> 
+           D I V 1 
+        </div> 
+        <div style="z-index:30; border:solid 1px black; position:absolute; 
+             top:50px; left:50px; width:200px; height:80px;"> 
+                D I V 2 
+             </div> 
+             <div style="z-index:20; border:solid 1px black; position:absolute; 
+                  top:80px; left:80px; width:200px; height:80px;"> 
+                     D I V 3 
+                  </div> 
+             </div> 
+
+<!--
+   </div>
+</div>
+-->
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Housecare\OldBundle\Entity\Coordscp" table="coordscp">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="country" type="string" column="Country" length="2" nullable="false"/>
+    <field name="language" type="string" column="Language" length="2" nullable="false"/>
+    <field name="iso2" type="string" column="ISO2" length="6" nullable="false"/>
+    <field name="region1" type="string" column="Region1" length="60" nullable="false"/>
+    <field name="region2" type="string" column="Region2" length="60" nullable="false"/>
+    <field name="region3" type="string" column="Region3" length="60" nullable="false"/>
+    <field name="region4" type="string" column="Region4" length="60" nullable="false"/>
+    <field name="zip" type="string" column="ZIP" length="10" nullable="false"/>
+    <field name="city" type="string" column="City" length="60" nullable="false"/>
+    <field name="area1" type="string" column="Area1" length="80" nullable="false"/>
+    <field name="area2" type="string" column="Area2" length="80" nullable="false"/>
+    <field name="lat" type="float" column="Lat" nullable="false"/>
+    <field name="lng" type="float" column="Lng" nullable="false"/>
+    <field name="tz" type="string" column="TZ" length="30" nullable="false"/>
+    <field name="utc" type="string" column="UTC" length="10" nullable="false"/>
+    <field name="dst" type="string" column="DST" length="1" nullable="false"/>
+  </entity>
+</doctrine-mapping>

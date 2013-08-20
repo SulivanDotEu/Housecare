@@ -1,0 +1,40 @@
+/* 
+    Document   : supportkot
+    Created on : 07-août-2013, 15:39:05
+    Author     : Benjamin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#header{
+    padding: 30px;
+    background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    color: white;
+}
+
+#mainContainer{
+    padding-top: 10px;
+}
+
+#left_menu .icon-chevron-right {
+    float: right;
+    margin-top: 2px;
+    margin-right: -6px;
+    opacity: .25;
+}
+
+#left_menu > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #0088cc;
+    border: 0;
+}
+
+#left_menu  .active .icon-chevron-right {
+    color: #ffffff;
+    opacity: 1;
+}

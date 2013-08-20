@@ -1,0 +1,68 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/index.html.twig #}
+{% set current_page = 'list' %}
+{% extends "HousecareWorkersBundle:workers:layout.html.twig" %}
+
+
+{% block title %}
+Accueil - {{ parent() }}
+{% endblock %}
+
+{% block container %}
+
+<h2>List of workers</h2>
+
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>#</th>
+         <th>Name</th>
+         <th>Qualification</th>
+         <th>Zip Code</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+    {% for worker in workers %}
+
+         <tr> 
+            <td>
+               <a href="{{ path('housecare_workers_read', {'id': worker.id}) }}">{{ worker.id }}</a></td>
+            <td>
+               {% if worker.isFree %}<span class="label label-success"><i class="icon-play icon-white"></i></span>{% endif %}
+               {% if worker.isBusy %}<span class="label label-warning"><i class="icon-pause icon-white"></i></span>{% endif %}
+               {% if worker.isDone %}<span class="label label-important"><i class="icon-stop icon-white"></i></span>{% endif %}
+
+
+
+{{ worker.firstName ~ ' ' ~ worker.lastName}}</td>
+               <td>{{ worker.qualification }}</td>
+               <td>{{ worker.zipCode}}</td>
+               <td>
+                  <div class="btn-group">
+                     <a class="btn " href="{{ path('housecare_workers_read', {'id': worker.id}) }}"><i class="icon-eye-open"></i> Read</a>
+                     <a  class="btn " href="{{ path('housecare_workers_update', {'id': worker.id}) }}"><i class="icon-pencil"></i> Edit</a>
+                     <a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="{{ path('housecare_workers_update', {'id': worker.id}) }}"><i class="icon-pencil"></i> Edit</a></li>
+
+                        <li class="dropdown-submenu">
+                           <a tabindex="-1" href="#">More options</a>
+                           <ul class="dropdown-menu">
+                              <li class=""><a href="/Symfony/web/app_dev.php/job/create"><i class="icon-pencil"></i> Free</a></li>
+                              <li class=""><a href="/Symfony/web/app_dev.php/job/create"><i class="icon-pencil"></i> Busy</a></li>
+                              <li class=""><a href="/Symfony/web/app_dev.php/job/create"><i class="icon-pencil"></i> Done</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </td>
+            </tr>
+
+    {% endfor %}
+         </tbody>
+      </table>
+
+
+
+
+{% endblock %}

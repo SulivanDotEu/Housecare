@@ -1,0 +1,44 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+Blog - {{ parent() }}
+{% endblock %}
+
+
+{% block navbar %}
+
+
+<div class="container">
+   <div class="navbar">
+      <div class="navbar-inner">
+         <div class="container">
+            <ul class="nav">
+               <li class="active "><a href="#">Customers</a></li>
+               <li><a href="#">+</a></li>
+               <li><a href="#">Jobs</a></li>
+               <li><a href="#">Agenda</a></li>
+               <li><a href="{{ path('housecare_workers_index') }}">Workers</a></li>
+               <li><a href="{{ path('housecare_workers_create') }}">+</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+
+
+</div>
+
+
+{% endblock %}
+
+
+
+{% block header %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+<h1>Costumers</h1>
+
+  {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+parameters:
+#    housecare_old.example.class: Housecare\OldBundle\Example
+
+services:
+#    housecare_old.example:
+#        class: %housecare_old.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

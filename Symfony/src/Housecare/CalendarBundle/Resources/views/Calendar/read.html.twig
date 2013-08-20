@@ -1,0 +1,38 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "HousecareCalendarBundle::layout.html.twig" %}
+
+{% block title %}
+Creation d'un calendar element - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+<h2>Element #{{ element.id }}</h2>
+
+<div class="well">
+   <ul>
+      <li>startDate : {{element.startDate|date("m/d/Y à G:i") }}</li>
+      <li>endDate : {{element.endDate|date("m/d/Y à G:i") }}</li>
+      <li>Color : {{element.color }}</li>
+   </ul>
+</div>
+
+<p>
+    <a href="{{ path('housecare_calendar_index') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Back to the list
+    </a>
+    <a href="{{ path('housecare_calendar_update', {'id': element.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Edit
+    </a>
+    <a href="{{ path('housecare_calendar_delete', {'id': element.id}) }}" class="btn">
+      <i class="icon-trash "></i>
+      Delete
+    </a>
+  </p>
+
+
+
+{% endblock %}

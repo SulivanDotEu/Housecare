@@ -1,0 +1,37 @@
+
+housecare_workers_index:
+    path:    /
+    defaults: { _controller: HousecareWorkersBundle:Worker:index }
+
+housecare_workers_list:
+    path:    /
+    defaults: { _controller: HousecareWorkersBundle:Worker:index }
+    
+housecare_workers_read:
+    path:     /read/{id}
+    defaults:  { _controller: HousecareWorkersBundle:Worker:read }
+    requirements:
+        id:  \d+
+
+housecare_workers_update:
+    path:     /update/{id}
+    defaults:  { _controller: HousecareWorkersBundle:Worker:update }
+    requirements:
+        id:  \d+
+
+housecare_workers_delete:
+    path:     /delete/{id}
+    defaults:  { _controller: HousecareWorkersBundle:Worker:delete }
+    requirements:
+        id:  \d+
+        
+housecare_workers_process:
+    path:     /process
+    defaults:  { _controller: HousecareWorkersBundle:Worker:process }
+
+        
+housecare_workers_create:
+    path:     /create
+    defaults:  { _controller: HousecareWorkersBundle:Worker:create }
+    
+  

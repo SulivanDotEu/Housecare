@@ -1,0 +1,29 @@
+{# empty Twig template #}
+{% set current_page = 'create' %}
+{% extends "HousecareJobBundle:jobCostumers:layout.html.twig" %}
+
+
+
+
+{% block container %}
+
+<div class="span4">
+   <div class="page-header">
+      <h1>Create a job and a costumers</h1>
+   </div>
+   <form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+         <input type="submit" class="btn btn-primary" />
+      </form>
+   </div>
+   <div class="span8">
+      <div class="page-header">
+      <h1>Calendar</h1>
+   </div>
+
+{{ calendar|raw  }}
+
+   </div>
+
+
+{% endblock %}

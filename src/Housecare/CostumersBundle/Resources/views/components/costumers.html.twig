@@ -1,0 +1,54 @@
+{# empty Twig template #}
+
+
+
+<div class="page-header">
+   <h1>Costumer #{{ costumer.id }}</h1>
+</div>
+<p>
+    <a href="{{ path('housecare_costumers_list') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Back to the list
+    </a>
+    <a href="{{ path('housecare_costumers_list') }}" class="btn">
+      <i class="icon-edit"></i>
+      Edit the worker
+    </a>
+    <a href="" class="btn disabled">
+      <i class="icon-trash "></i>
+      Delete the worker
+    </a>
+  </p>
+
+<div class="row-fluid">
+   <div class="span4">
+      <dl>
+         <dt>Last Name</dt>
+         <dd>{{ costumer.lastName }}</dd>
+         <dt>First Name</dt>
+         <dd>{{ costumer.firstName }}</dd>
+         <dt>Phone</dt>
+         <dd>{{ costumer.phone }}</dd>
+         
+      </dl>
+   </div>
+   <div class="span4">
+
+      <dl>
+         <dt>Street</dt>
+         <dd>{{ costumer.street}}</dd>
+         <dt>Number</dt>
+         <dd>{{ costumer.number }}</dd>
+         <dt>Zip Code</dt>
+         <dd>{{ costumer.zipCode }}</dd>
+         <dt>City</dt>
+         <dd>{{ costumer.city }}</dd>
+         <dt>Country</dt>
+         <dd>{{ costumer.country }}</dd>
+      </dl>
+   </div>
+      <div class="span4">
+         <h3>Note</h3>
+         {{ costumer.note }}
+      </div>
+</div>

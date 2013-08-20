@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Statsauv" table="statsauv">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateplein" type="datetime" column="datePlein" nullable="false"/>
+    <field name="time" type="string" column="time" length="200" nullable="false"/>
+    <field name="toujoursla" type="string" column="toujoursLa" length="200" nullable="false"/>
+    <field name="domaine" type="string" column="domaine" length="50" nullable="false"/>
+    <field name="parcours" type="string" column="parcours" length="200" nullable="false"/>
+    <field name="kewwords" type="string" column="kewWords" length="200" nullable="false"/>
+    <field name="keywordmatch" type="integer" column="keyWordMatch" nullable="false"/>
+    <field name="phrasetitre" type="string" column="phraseTitre" length="200" nullable="false"/>
+    <field name="idsession" type="string" column="idSession" length="200" nullable="false"/>
+    <field name="newadd" type="string" column="newAdd" length="200" nullable="false"/>
+    <field name="numero" type="string" column="numero" length="200" nullable="false"/>
+    <field name="ip" type="string" column="ip" length="200" nullable="false"/>
+    <field name="ipcountry" type="string" column="IPCountry" length="30" nullable="false"/>
+    <field name="ipcountryc" type="string" column="IPCountryC" length="5" nullable="false"/>
+    <field name="ipcity" type="string" column="IPCity" length="30" nullable="false"/>
+    <field name="anngoogle" type="string" column="annGoogle" length="200" nullable="false"/>
+    <field name="ref" type="text" column="ref" nullable="false"/>
+    <field name="lasttime" type="string" column="lastTime" length="200" nullable="false"/>
+    <field name="chat" type="text" column="chat" nullable="false"/>
+    <field name="lastchat" type="integer" column="lastChat" nullable="false"/>
+    <field name="hide" type="integer" column="hide" nullable="false"/>
+    <field name="firsttime" type="string" column="firstTime" length="200" nullable="false"/>
+    <field name="lang" type="string" column="lang" length="200" nullable="false"/>
+    <field name="langue" type="string" column="langue" length="200" nullable="false"/>
+    <field name="testln" type="string" column="testln" length="200" nullable="false"/>
+    <field name="gets" type="string" column="gets" length="200" nullable="false"/>
+    <field name="gnal" type="string" column="gnal" length="200" nullable="false"/>
+    <field name="idGnal" type="string" column="id_gnal" length="200" nullable="false"/>
+    <field name="phplogin" type="string" column="phplogin" length="200" nullable="false"/>
+    <field name="serverUserAgent" type="string" column="server_user_agent" length="200" nullable="false"/>
+    <field name="phplogin2" type="string" column="phplogin2" length="200" nullable="false"/>
+    <field name="login" type="string" column="login" length="200" nullable="false"/>
+    <field name="idjob" type="integer" column="idJob" nullable="false"/>
+  </entity>
+</doctrine-mapping>

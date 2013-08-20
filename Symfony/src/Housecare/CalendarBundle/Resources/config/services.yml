@@ -1,0 +1,10 @@
+parameters:
+#    housecare_calendar.example.class: Housecare\CalendarBundle\Example
+
+services:
+  housecare_calendar.render:
+    class: Housecare\CalendarBundle\CalendarRender\CalendarRender
+  
+#    housecare_calendar.example:
+#        class: %housecare_calendar.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

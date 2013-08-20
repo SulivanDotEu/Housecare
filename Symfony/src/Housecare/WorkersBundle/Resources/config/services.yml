@@ -1,0 +1,7 @@
+parameters:
+#    housecare_workers.example.class: Housecare\WorkersBundle\Example
+
+services:
+#    housecare_workers.example:
+#        class: %housecare_workers.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

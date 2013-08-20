@@ -1,0 +1,95 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "HousecareCalendarBundle::layout.html.twig" %}
+
+{% block title %}
+Creation d'un calendar element - {{ parent() }}
+{% endblock %}
+
+
+{% block header_container %}
+
+{% endblock %}
+
+
+{% block super_container %}
+
+<!--
+<div class="container">
+   <div class="row">
+-->
+
+<div style="padding-top: 15px"></div>
+
+<div style="position:relative;">
+
+
+
+
+   <div id="ajax-response">
+   </div>
+
+
+
+   <div >
+
+      <div class="container-fluid">
+         <div class="row-fluid" >
+
+
+         {{ calendar|raw  }}
+
+         </div>
+      </div>
+
+
+
+
+
+   </div>
+</div>
+
+
+
+
+
+<!--
+   </div>
+</div>
+-->
+
+
+
+
+{% endblock %}
+
+{% block code_js %}
+<script>
+   $(function(){
+      $('a.element').bind('click', getElementInfo);
+      
+      function getElementInfo(evt){
+         var declencheur = $(evt.currentTarget); 
+         
+         var obj = new Object();
+          $('#ajax-response').html("Please wait...");
+         
+         obj.url     =  declencheur.attr('data-ajax');
+         obj.asynch  =  true;
+         obj.method  =  'get';
+         obj.success  =  function (reponse){
+           successAjax(reponse);
+         }
+         
+         function successAjax(reponse){
+            $('#ajax-response').html(reponse);
+         }
+         
+         $.ajax(obj);
+      
+        
+      }
+});
+
+   </script>
+        {% endblock %}

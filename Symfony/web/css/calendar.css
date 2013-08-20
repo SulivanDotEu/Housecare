@@ -1,0 +1,134 @@
+.boxshadow{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.5);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.5);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.5);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.5);
+	box-shadow:0 0 20px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.5);
+}
+.hour{
+   width: 50px !important;
+}
+
+.minute{
+   width: 50px !important;
+}
+
+#calendar tbody tr td {
+   height: 19px;
+   font-size: 12px;
+   padding: 0px;
+   margin: 1px;
+   text-align: center;
+   vertical-align: middle;
+   min-width: 100px;
+   z-index: 0;
+   line-height: 0px;
+}
+
+
+#calendar{
+   z-index: 0;
+   /* display: block; */
+   table-layout:fixed !important;
+
+}
+
+#calendar td { min-width: 200px; 
+
+}
+
+#calendar .element {
+   display: block;
+   z-index: 1;
+   position: absolute !important;
+   padding-left: 5px;
+   padding-right: 5px;
+   font-size: 12px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   border: solid rgb(46, 202, 202) 1px;
+   height: 20px;
+   background-color: cyan;
+   text-align: left;
+
+   margin-top: -11px;
+   line-height: 20px;
+   width: 100px;
+   text-decoration: none;
+   overflow: hidden;
+   opacity: 0.7;
+}
+
+
+#calendar .element:hover {
+   opacity: 1;
+}
+
+#calendar .table th, .table td {
+   max-height: 20px;
+}
+
+/** COLOR DEFINITION FOR CALENDAR */
+
+#calendar .cyan{
+   border: solid rgb(32, 143, 143) 1px;
+   background-color: cyan;
+   color: rgb(32, 143, 143);
+}
+
+#calendar .green{
+   border: solid rgb(62, 162, 53) 1px;
+   background-color: greenyellow;
+   color: rgb(62, 162, 53);
+}
+
+#calendar .red{
+   border: solid rgb(150, 0, 0)  1px;
+   background-color: rgb(236, 190, 190) ;
+   color: rgb(150, 0, 0) ;
+}
+
+#calendar .yellow{
+   border: solid rgb(139, 143, 39)  1px;
+   background-color: yellow ;
+   color: rgb(139, 143, 39) ;
+}
+
+#calendar .white{
+   border: solid black  1px;
+   background-color: whitesmoke ;
+   color: black ;
+}
+
+#calendar .black{
+   border: solid white 1px;
+   background-color: black ;
+   color: white ;
+}
+
+#calendar .orange{
+   border: solid rgb(180, 116, 0)  1px;
+   background-color: rgb(255, 210, 129) ;
+   color: rgb(180, 116, 0) ;
+}
+
+/** --- */
+
+.elementinfo{
+   border: solid #ddd 1px;
+   background-color: #F5F5F5;
+   margin-bottom: 15px;
+   padding: 10px;
+}
+
+.elementinfo h3{
+   border-bottom: solid #ddd 1px;
+}
+
+.elementinfo .span4{
+   border-right: solid #ddd 1px;
+}
+
+
+
+/* ELEMENT QUI APPARAIT AU TOP */

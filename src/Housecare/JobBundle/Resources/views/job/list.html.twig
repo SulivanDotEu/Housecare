@@ -1,0 +1,121 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/index.html.twig #}
+{% set current_page = 'list' %}
+{% extends "HousecareJobBundle:job:layout.html.twig" %}
+
+
+{% block title %}
+Accueil - {{ parent() }}
+{% endblock %}
+
+{% block container %}
+
+<div class="page-header">
+   <h1>List of Jobs</h1>
+</div>
+
+<div class="well clearfix">
+   <a type="button" class="btn btn-primary" href="{{ path('housecare_job_create') }}"><i class="icon-plus icon-white"></i> Add</a>
+   <a type="button" class="btn" href="{{ path('housecare_job_create') }}"><i class="icon-plus"></i> Add</a>
+   <a type="button" class="btn" href="{{ path('housecare_job_create') }}"><i class="icon-plus"></i> Add</a>
+   <div class="pull-right">
+      <div class="input-append">
+
+         <input type="text" class="appendedInputButtons" data-provide="typeahead" data-items="4" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]">
+
+         <button class="btn" type="button">Search</button>
+         <button class="btn disabled" type="button">Options</button>
+         <button class="btn disabled" type="button">Options</button>
+      </div>
+   </div>
+   <br>
+
+</div>
+
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>#</th>
+         <th style="width: 10%"><i class="icon-tag"></i></th>
+         <th>Type</th>
+         <th>Subtype</th>
+         <th><i class="icon-time"></i></th>
+         <th class="hidden-phone">Thanks to</th>
+         <th class="hidden-phone">Worker</th>
+         <th>Creation <i class="icon-time"></i></th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+    {% for object in objects %}
+
+         <tr> 
+            <td>
+               <a href="{{ path('housecare_workers_read', {'id': object.id}) }}">{{ object.id }}</a>
+            </td>
+            <td>
+               {% if object.hasCostumers() == false %}
+                  <span class="label label-inverse">
+                     <i class="icon-warning-sign icon-white"></i> no client
+                  </span>
+                  {% endif %}
+               {% if object.isSchedule() == false %}
+                  <span class="label">
+                     <i class="icon-calendar icon-white"></i> unscheduled
+                  </span>
+               {% endif %}
+               {% if object.isAssignedToWorker() == false %}
+                  <span class="label label-warning">
+                     <i class="icon-wrench icon-white"></i> not assigned
+                  </span>
+               {% endif %}
+               </td>
+               <td>{{ object.type }}</td>
+               <td>{{ object.subtype }}</td>
+               <td>{{ object.timeNeeded }}</td>
+               <td class="hidden-phone">{{ object.thanksTo }}</td>
+               <td class="hidden-phone">
+                  {% if object.worker.lastName is defined %}
+                  {{ object.worker.lastName }}
+                  {% endif %}
+
+                  </td>
+                  <td>{{object.creationDate|date("m/d/Y à G:i") }}</td>
+                  <td>
+                     <div class="btn-group">
+                        <a class="btn " href="{{ path('housecare_job_read', {'id': object.id}) }}"><i class="icon-eye-open"></i> Read</a>
+                        <a  class="btn " href="{{ path('housecare_job_update', {'id': object.id}) }}"><i class="icon-edit"></i> Edit</a>
+                        <a  class="btn " href="{{ path('job_schedule', {'id': object.id}) }}"><i class="icon-time"></i> Schedule</a>
+                        <a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li class="dropdown-submenu">
+                              <a tabindex="-1" href="#"><i class="icon-trash"></i> Delete</a>
+                              <ul class="dropdown-menu">
+                                 <li><a href="{{ path('housecare_job_delete', {'id': object.id}) }}"> Confirm</a></li>
+                              </ul>
+                           </li>
+                           <li class="divider"></li>
+                           <li class="dropdown-submenu">
+                              <a tabindex="-1" href="#"><i class="icon-edit"></i> Assign a worker</a>
+                              <ul class="dropdown-menu">
+                                 <li class=""><a href="/Symfony/web/app_dev.php/job/create"><i class="icon-pencil"></i> Create a job</a></li>
+                                 <li class="divider"></li>
+                              {% for worker in workers %}
+                                 <li><a href="{{ path('housecare_job_assign_worker_with_worker', {'id': object.id, 'worker': worker.id}) }}">{{worker.firstName}} {{worker.lastName}}</a></li>
+                              {% endfor %}
+                              </ul>
+                           </li>
+
+                        </ul>
+                     </div>
+                  </td>
+               </tr>
+
+    {% endfor %}
+            </tbody>
+         </table>
+
+
+
+
+{% endblock %}
+

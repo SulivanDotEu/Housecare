@@ -1,0 +1,52 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "HousecareCalendarBundle::layout.html.twig" %}
+
+{% block title %}
+Creation d'un calendar element - {{ parent() }}
+{% endblock %}
+
+{% block container %}
+
+<h2>List of calendar element</h2>
+
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>#</th>
+         <th>Start Date</th>
+         <th>End Date</th>
+         <th>Color</th>
+         <th></th>
+      </tr>
+   </thead>
+   <tbody>
+    {% for element in elements %}
+
+         <tr> 
+            <td>
+               <a href="{{ path('housecare_calendar_read', {'id': element.id}) }}">{{ element.id }}</a></td>
+            <td>{{element.startDate|date("m/d/Y à G:i") }}</td>
+            <td>{{element.endDate|date("m/d/Y à G:i") }}</td>
+            <td>{{element.color }}</td>
+            <td>
+               <div class="btn-group">
+                  <a class="btn " href="{{ path('housecare_calendar_read', {'id': element.id}) }}"><i class="icon-eye-open"></i> Read</a>
+                  <a  class="btn " href="{{ path('housecare_calendar_update', {'id': element.id}) }}"><i class="icon-pencil"></i> Edit</a>
+                  <a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="{{ path('housecare_calendar_delete', {'id': element.id})}}"><i class="icon-pencil"></i> Delete</a></li>
+                     
+                  </ul>
+               </div>
+            </td>
+         </tr>
+
+    {% endfor %}
+      </tbody>
+   </table>
+
+
+
+
+{% endblock %}

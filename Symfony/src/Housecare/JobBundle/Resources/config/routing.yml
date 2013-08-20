@@ -1,0 +1,46 @@
+housecare_job_list:
+    pattern:  /
+    defaults: { _controller: HousecareJobBundle:Job:list }
+
+housecare_job_list_sort:
+    pattern:  /sort/{sort}
+    defaults: { _controller: HousecareJobBundle:Job:list }
+
+housecare_job_list_sort_order:
+    pattern:  /sort/{sort}/{order}
+    defaults: { _controller: HousecareJobBundle:Job:list }
+
+housecare_job_create:
+    pattern:  /create
+    defaults: { _controller: HousecareJobBundle:Job:create }
+
+housecare_job_read:
+    pattern:  /read/{id}
+    defaults: { _controller: HousecareJobBundle:Job:read }
+    
+housecare_job_update:
+    pattern:  /update/{id}
+    defaults: { _controller: HousecareJobBundle:Job:update }
+
+housecare_job_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: HousecareJobBundle:Job:delete }
+
+#gestion of a job and a costumers in the same time
+
+housecare_job_costumers_create:
+    pattern:  /job_costumers/create
+    defaults: { _controller: HousecareJobBundle:JobCostumers:create }
+
+
+housecare_job_assign_worker:
+    pattern:  /assign/worker/{id}
+    defaults: { _controller: HousecareJobBundle:Job:assignWorker }
+
+housecare_job_assign_worker_with_worker:
+    pattern:  /assign/{id}/worker/{worker}
+    defaults: { _controller: HousecareJobBundle:Job:assignWorker2Job }
+
+job_schedule:
+    pattern:  /schedule/{id}
+    defaults: { _controller: HousecareJobBundle:Job:scheduleJob }

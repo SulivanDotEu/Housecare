@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Costumers" table="costumers">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="lastname" type="string" column="lastName" length="255" nullable="false"/>
+    <field name="firstname" type="string" column="firstName" length="255" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="255" nullable="true"/>
+    <field name="street" type="string" column="street" length="255" nullable="false"/>
+    <field name="number" type="string" column="number" length="255" nullable="false"/>
+    <field name="zipcode" type="string" column="zipCode" length="255" nullable="false"/>
+    <field name="city" type="string" column="city" length="255" nullable="false"/>
+    <field name="country" type="string" column="country" length="255" nullable="true"/>
+    <field name="note" type="text" column="note" nullable="true"/>
+  </entity>
+</doctrine-mapping>

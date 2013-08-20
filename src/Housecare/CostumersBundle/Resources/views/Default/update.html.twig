@@ -1,0 +1,20 @@
+{# empty Twig template #}
+{% set current_page = 'update' %}
+{% extends "HousecareWorkersBundle:workers:layout.html.twig" %}
+
+
+
+
+{% block container %}
+
+
+<div class="page-header">
+    <h1>Update a costumer</h1>
+</div>
+<form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+        <input type="submit" class="btn btn-primary" />
+    </form>
+
+
+{% endblock %}

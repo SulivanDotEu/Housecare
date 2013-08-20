@@ -1,0 +1,51 @@
+housecare_calendar_index:
+    pattern:  /
+    defaults: { _controller: HousecareCalendarBundle:Calendar:index }
+
+housecare_calendar_list:
+    pattern:  /list
+    defaults: { _controller: HousecareCalendarBundle:Calendar:list }
+
+housecare_calendar_create:
+    pattern:  /create
+    defaults: { _controller: HousecareCalendarBundle:Calendar:create }
+
+housecare_calendar_read:
+    pattern:  /read/{id}
+    defaults: { _controller: HousecareCalendarBundle:Calendar:read }
+    requirements:
+        id:  \d+
+
+housecare_calendar_delete:
+    path:     /delete/{id}
+    defaults:  { _controller: HousecareCalendarBundle:Calendar:delete }
+    requirements:
+        id:  \d+
+        
+housecare_calendar_update:
+    path:     /update/{id}
+    defaults:  { _controller: HousecareCalendarBundle:Calendar:update }
+    requirements:
+        id:  \d+
+
+housecare_calendar_update_noform:
+    path:     /update_noform/{id}
+    defaults:  { _controller: HousecareCalendarBundle:Calendar:updateNoForm }
+    requirements:
+        id:  \d+
+        
+        
+calendar_get_element:
+    path:   /element/{id}
+    defaults:  { _controller: HousecareCalendarBundle:Calendar:getElement }
+    requirements:
+        id:  \d+
+        
+calendar_test:
+    path:   /test
+    defaults:  { _controller: HousecareCalendarBundle:Calendar:test }
+    
+    
+calendar_test:
+    path: /km/{zipCode}
+    defaults: { _controller: HousecareCalendarBundle:Calendar:getKm}

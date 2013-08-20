@@ -1,0 +1,56 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/index.html.twig #}
+{% set current_page = 'list' %}
+{% extends "HousecareCostumersBundle:Default:layout.html.twig" %}
+
+
+{% block title %}
+Accueil - {{ parent() }}
+{% endblock %}
+
+{% block container %}
+
+<div class="page-header">
+   <h1>List of Costumers</h1>
+</div>
+<a type="button" class="btn" href="{{ path('housecare_costumers_create') }}"><i class="icon-plus"></i> Add</a>
+
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>#</th>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Zip Code</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+    {% for object in objects %}
+
+         <tr> 
+            <td>
+               <a href="{{ path('housecare_workers_read', {'id': object.id}) }}">{{ object.id }}</a></td>
+            <td>{{ object.firstName }}</td>
+            <td>{{ object.lastName }}</td>
+            <td>{{ object.zipCode}}</td>
+            <td>
+               <div class="btn-group">
+                  <a class="btn " href="{{ path('housecare_costumers_read', {'id': object.id}) }}"><i class="icon-eye-open"></i> Read</a>
+                  <a  class="btn " href="{{ path('housecare_costumers_update', {'id': object.id}) }}"><i class="icon-pencil"></i> Edit</a>
+                  <a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="{{ path('housecare_workers_update', {'id': object.id}) }}"><i class="icon-pencil"></i> Edit</a></li>
+
+                  </ul>
+               </div>
+            </td>
+         </tr>
+
+    {% endfor %}
+      </tbody>
+   </table>
+
+
+
+
+{% endblock %}

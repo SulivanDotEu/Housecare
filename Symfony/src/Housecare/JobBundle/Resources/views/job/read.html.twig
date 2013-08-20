@@ -1,0 +1,87 @@
+{# empty Twig template #}
+{% set current_page = 'read' %}
+{% extends "HousecareJobBundle:job:layout.html.twig" %}
+
+
+
+
+{% block container %}
+
+<div class="row-fluid">
+   <div class="span6">
+      <div class="page-header">
+         <h1>Job #{{ object.id }}</h1>
+      </div>
+      <p>
+         <a href="{{ path('housecare_job_list') }}" class="btn">
+            <i class="icon-chevron-left"></i>
+            Back to the list
+         </a>
+         <a href="{{ path('housecare_job_list') }}" class="btn">
+            <i class="icon-edit"></i>
+            Edit the worker
+         </a>
+         <a href="" class="btn disabled">
+            <i class="icon-trash "></i>
+            Delete the worker
+         </a>
+      </p>
+
+      <div class="row-fluid">
+         <div class="span6">
+            <h3>Note</h3>
+            <hr>
+         {{ object.description }}
+
+
+
+
+
+         </div>
+         <div class="span6">
+            <dl>
+               <dt>Type</dt>
+               <dd>{{ object.type }}</dd>
+               <dt>Subtype</dt>
+               <dd>{{ object.subtype }}</dd>
+               <dt>Time Needed</dt>
+               <dd>{{ object.timeNeeded }}</dd>
+               <dt>Thanks to</dt>
+               <dd>{{ object.thanksTo}}</dd>
+
+
+               {% if object.hasCostumers() == true %}
+               <dt>Costumer</dt>
+               <dd>{{ object.costumers.firstName}} {{ object.costumers.lastName}}
+
+                  <a class="btn btn-mini" href="{{ path('housecare_costumers_read', {'id': object.costumers.id}) }}"><i class="icon-eye-open"></i></a>
+               </dd>
+                {% endif %}
+               {% if object.worker.firstName is defined %}
+               <dt>Worker</dt>
+               <dd> {{ object.worker.firstName }}
+         {{ object.worker.lastName }}   
+
+                     <a class="btn btn-mini" href="{{ path('housecare_workers_read', {'id': object.worker.id}) }}"><i class="icon-eye-open"></i></a>
+                  </dd>
+                {% endif %}
+
+               </dl>
+            </div>
+
+
+         </div>
+      </div>
+      <div class="span6">
+         <div class="row-fluid">
+            <div class="page-header">
+               <h2>Schedule</h2>
+            </div>
+         </div>
+
+         {#{ render(controller('HousecareCostumersBundle:Default:read', { 'id': object.costumers.id })) }#}
+      </div>
+   </div>
+
+
+{% endblock %}

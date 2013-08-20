@@ -1,0 +1,17 @@
+
+
+<ul class="nav nav-tabs nav-stacked" id="left_menu">
+    <li class="{% if current_page == 'list' %} active {% endif %}">
+        <a href="{{ path('housecare_workers_index') }}">
+            <i class="icon-chevron-right {% if current_page == 'list' %} icon-white {% endif %}"></i>
+            List</a>
+    </li>
+    <li class="{% if current_page == 'create' %} active {% endif %}">
+        <a href="{{ path('housecare_workers_create') }}">
+            <i class="icon-chevron-right {% if current_page == 'create' %} icon-white {% endif %}"></i>
+            Create</a>
+    </li>
+
+    
+</ul>
+

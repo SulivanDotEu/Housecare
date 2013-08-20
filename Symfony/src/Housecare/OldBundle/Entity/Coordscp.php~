@@ -1,0 +1,137 @@
+<?php
+
+namespace Housecare\OldBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Coordscp
+ *
+ * @ORM\Table(name="coordscp")
+ * @ORM\Entity
+ */
+class Coordscp
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Country", type="string", length=2, nullable=false)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Language", type="string", length=2, nullable=false)
+     */
+    private $language;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ISO2", type="string", length=6, nullable=false)
+     */
+    private $iso2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Region1", type="string", length=60, nullable=false)
+     */
+    private $region1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Region2", type="string", length=60, nullable=false)
+     */
+    private $region2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Region3", type="string", length=60, nullable=false)
+     */
+    private $region3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Region4", type="string", length=60, nullable=false)
+     */
+    private $region4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ZIP", type="string", length=10, nullable=false)
+     */
+    private $zip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="City", type="string", length=60, nullable=false)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Area1", type="string", length=80, nullable=false)
+     */
+    private $area1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Area2", type="string", length=80, nullable=false)
+     */
+    private $area2;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Lat", type="float", nullable=false)
+     */
+    private $lat;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="Lng", type="float", nullable=false)
+     */
+    private $lng;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TZ", type="string", length=30, nullable=false)
+     */
+    private $tz;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UTC", type="string", length=10, nullable=false)
+     */
+    private $utc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DST", type="string", length=1, nullable=false)
+     */
+    private $dst;
+
+
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Facturesa6pcsauv" table="facturesa6pcsauv">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idfactexcel" type="integer" column="idFactExcel" nullable="false"/>
+    <field name="tva" type="float" column="tva" nullable="false"/>
+    <field name="base" type="float" column="base" nullable="false"/>
+    <field name="nom" type="string" column="nom" length="50" nullable="false"/>
+    <field name="regtva" type="integer" column="regTva" nullable="false"/>
+    <field name="adresse" type="string" column="adresse" length="60" nullable="false"/>
+    <field name="cpetville" type="string" column="cpEtVille" length="40" nullable="false"/>
+    <field name="numfacture" type="string" column="numFacture" length="10" nullable="false"/>
+    <field name="datefacture" type="string" column="dateFacture" length="12" nullable="false"/>
+    <field name="customerid" type="integer" column="customerId" nullable="false"/>
+    <field name="gsm" type="string" column="gsm" length="20" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+parameters:
+#    housecare_job.example.class: Housecare\JobBundle\Example
+
+services:
+  housecare.object_comparator:
+      class: Housecare\JobBundle\Comparator\ObjectComparator
+#    housecare_job.example:
+#        class: %housecare_job.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+

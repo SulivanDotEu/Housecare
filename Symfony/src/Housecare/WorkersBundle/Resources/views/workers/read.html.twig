@@ -1,0 +1,43 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+ 
+{% extends "HousecareWorkersBundle:workers:layout.html.twig" %}
+ 
+{% block title %}
+  Worker - {{ parent() }}
+{% endblock %}
+ 
+{% block container %}
+ 
+  <h2>{{ worker.firstName ~ ' ' ~ worker.lastName}}</h2>
+  
+  <dl>
+  <dt>Email</dt>
+  <dd>{{ worker.email}}</dd>
+  <dt>Phone</dt>
+  <dd>{{ worker.phone }}</dd>
+  <dt>Order</dt>
+  <dd>{{ worker.position }}</dd>
+  <dt>Note</dt>
+  <dd>{{ worker.note }}</dd>
+  <dt>Statut</dt>
+  <dd>{{ worker.statut }}</dd>
+</dl>
+ 
+
+ 
+  <p>
+    <a href="{{ path('housecare_workers_index') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Back to the list
+    </a>
+    <a href="{{ path('housecare_workers_update', {'id': worker.id}) }}" class="btn">
+      <i class="icon-edit"></i>
+      Edit the worker
+    </a>
+    <a href="{#{ path('sdzblog_supprimer', {'id': article.id}) }#}" class="btn disabled">
+      <i class="icon-trash "></i>
+      Delete the worker
+    </a>
+  </p>
+ 
+{% endblock %}

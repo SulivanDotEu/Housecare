@@ -1,0 +1,29 @@
+housecare_old:
+    resource: "@HousecareOldBundle/Resources/config/routing.yml"
+    prefix:   /old
+
+housecare_job:
+    resource: "@HousecareJobBundle/Resources/config/routing.yml"
+    prefix:   /
+
+housecare_costumers:
+    resource: "@HousecareCostumersBundle/Resources/config/routing.yml"
+    prefix:   /
+
+housecare_workers:
+    resource: "@HousecareWorkersBundle/Resources/config/routing.yml"
+    prefix:   /workers
+    
+housecare_calendar:
+    resource: "@HousecareCalendarBundle/Resources/config/routing.yml"
+    prefix:   /calendar
+    
+    
+housecare_costumers:
+    resource: "@HousecareCostumersBundle/Resources/config/routing.yml"
+    prefix:   /costumers
+    
+housecare_job:
+    resource: "@HousecareJobBundle/Resources/config/routing.yml"
+    prefix:   /job
+    

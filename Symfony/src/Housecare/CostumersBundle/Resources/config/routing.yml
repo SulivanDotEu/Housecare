@@ -1,0 +1,15 @@
+housecare_costumers_list:
+    pattern:  /
+    defaults: { _controller: HousecareCostumersBundle:Default:list }
+
+housecare_costumers_create:
+    pattern:  /create
+    defaults: { _controller: HousecareCostumersBundle:Default:create }
+
+housecare_costumers_read:
+    pattern:  /read/{id}
+    defaults: { _controller: HousecareCostumersBundle:Default:read }
+    
+housecare_costumers_update:
+    pattern:  /update/{id}
+    defaults: { _controller: HousecareCostumersBundle:Default:update }

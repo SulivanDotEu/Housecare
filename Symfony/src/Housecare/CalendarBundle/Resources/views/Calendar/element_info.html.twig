@@ -1,0 +1,80 @@
+<div class="container-fluid">
+   <div class="row-fluid" >
+      <div class="span12">
+         <div class="tabbable">
+            <ul class="nav nav-tabs" id="myTab">
+               <li class="active">
+                  <a data-toggle="tab" href="#home">
+                     <i class="green icon-calendar "></i>
+                     Calendar Element
+                  </a>
+               </li>
+
+               <li class="">
+                  <a data-toggle="tab" href="#settings">
+                     <i class="green icon-wrench"></i>
+                     Settings
+                     <span class="badge badge-important">4</span>
+                  </a>
+               </li>
+
+               <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                     <i class="green icon-calendar "></i>
+                     Owner Information
+                     <b class="caret"></b>
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-info">
+                     <li>
+                        <a data-toggle="tab" href="#dropdown1">@fat</a>
+                     </li>
+
+                     <li>
+                        <a data-toggle="tab" href="#dropdown2">@mdo</a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+
+            <div class="tab-content">
+               <div id="home" class="tab-pane active">
+
+               </div>
+
+               <div id="settings" class="tab-pane">
+                  <div class="row-fluid" >
+                     <div class="span6" >
+                        <h2>Edit element</h2>
+
+                        <div class="well">
+                           <form method="post" action="{{ path('housecare_calendar_update_noform', {'id':entity.id}) }}" {{ form_enctype(form) }}>
+                  {{ form_widget(form) }}
+                                 <input type="submit" class="btn btn-primary" />
+                              </form>
+                           </div>
+
+
+                        </div>
+                        <div class="span6" >
+
+                           b
+
+                        </div>
+                     </div>
+
+                  </div>
+
+                  <div id="dropdown1" class="tab-pane">
+                     <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                  </div>
+
+                  <div id="dropdown2" class="tab-pane">
+                     <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                  </div>
+               </div>
+            </div>
+            <hr>
+         </div>
+      </div>
+   </div>

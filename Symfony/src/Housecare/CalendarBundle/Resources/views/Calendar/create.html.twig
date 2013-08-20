@@ -1,0 +1,22 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "HousecareCalendarBundle::layout.html.twig" %}
+
+{% block title %}
+Creation d'un calendar element - {{ parent() }}
+{% endblock %}
+
+{% block container %}
+
+<h2>New calendar element</h2>
+
+<div class="well">
+  <form method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary" />
+  </form>
+</div>
+
+
+
+{% endblock %}
